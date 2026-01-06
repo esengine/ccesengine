@@ -103,7 +103,7 @@ jobs:
       - uses: actions/checkout@v4
         name: Download external
         with:
-          repository: cocos/cocos-engine-external
+          repository: esengine/cocos-engine-external
           path: './native/external'
           ref: "${{ env.EXT_VERSION }}"
           fetch-depth: 1

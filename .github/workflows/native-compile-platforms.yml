@@ -31,7 +31,7 @@ jobs:
         shell: bash
         run: |
           EXT_VERSION=`node ./.github/workflows/get-native-external-version.js`
-          git clone --branch $EXT_VERSION --depth 1 https://github.com/cocos/cocos-engine-external native/external
+          git clone --branch $EXT_VERSION --depth 1 https://github.com/esengine/cocos-engine-external native/external
       - name: Install deps
         uses: humbletim/setup-vulkan-sdk@523828e49cd4afabce369c39c7ee6543a2b7a735
         with:
@@ -75,7 +75,7 @@ jobs:
         shell: bash
         run: |
           EXT_VERSION=`node ./.github/workflows/get-native-external-version.js`
-          git clone --branch $EXT_VERSION --depth 1 https://github.com/cocos/cocos-engine-external native/external
+          git clone --branch $EXT_VERSION --depth 1 https://github.com/esengine/cocos-engine-external native/external
       - uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
@@ -175,7 +175,7 @@ jobs:
         shell: bash
         run: |
           EXT_VERSION=`node ./.github/workflows/get-native-external-version.js`
-          git clone --branch $EXT_VERSION --depth 1 https://github.com/cocos/cocos-engine-external native/external
+          git clone --branch $EXT_VERSION --depth 1 https://github.com/esengine/cocos-engine-external native/external
       - uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
@@ -309,7 +309,7 @@ jobs:
         shell: bash
         run: |
           EXT_VERSION=`node ./.github/workflows/get-native-external-version.js`
-          git clone --branch $EXT_VERSION --depth 1 https://github.com/cocos/cocos-engine-external native/external
+          git clone --branch $EXT_VERSION --depth 1 https://github.com/esengine/cocos-engine-external native/external
       - uses: actions/setup-java@v4
         id: setup-jdk
         with:
@@ -463,7 +463,7 @@ jobs:
         shell: bash
         run: |
           EXT_VERSION=`node ./.github/workflows/get-native-external-version.js`
-          git clone --branch $EXT_VERSION --depth 1 https://github.com/cocos/cocos-engine-external native/external
+          git clone --branch $EXT_VERSION --depth 1 https://github.com/esengine/cocos-engine-external native/external
 
       - name: Compile
         env:
@@ -515,7 +515,7 @@ jobs:
         shell: bash
         run: |
           EXT_VERSION=`node ./.github/workflows/get-native-external-version.js`
-          git clone --branch $EXT_VERSION --depth 1 https://github.com/cocos/cocos-engine-external native/external
+          git clone --branch $EXT_VERSION --depth 1 https://github.com/esengine/cocos-engine-external native/external
       - name: Compile
         env:
           COCOS_ENGINE_DEV: 1
