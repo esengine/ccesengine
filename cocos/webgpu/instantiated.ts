@@ -82,7 +82,6 @@ export const promiseForWebGPUInstantiation = (() => {
                     adapter.requestDevice().then((device) => {
                         webgpuAdapter.adapter = adapter;
                         webgpuAdapter.device = device;
-                        console.log(gfx);
                         resolve();
                     });
                 });

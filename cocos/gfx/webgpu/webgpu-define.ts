@@ -49,7 +49,6 @@ WEBGPU && promiseForWebGPUInstantiation.then(() => {
             console.error('Device was lost.', info);
             throw new Error('Something bad happened');
         });
-        console.log(adapter);
 
         originDeviceInitializeFunc.call(this, info);
 
