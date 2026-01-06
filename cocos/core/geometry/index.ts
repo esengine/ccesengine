@@ -43,7 +43,6 @@ export { Frustum } from './frustum';
 export { Keyframe, AnimationCurve, WrapModeMask } from './curve';
 export { SplineMode, Spline } from './spline';
 export * from './spec';
-export * from './deprecated-3.0.0';
 
 // engine internal exports
 export { constructLegacyCurveAndConvert, OptimizedKey, evalOptCurve } from './curve';

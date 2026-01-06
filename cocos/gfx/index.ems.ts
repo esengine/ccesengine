@@ -30,7 +30,6 @@
 import { cclegacy } from '../core';
 import { gfx, webgpuAdapter } from '../webgpu/instantiated';
 
-import './deprecated-3.0.0';
 
 export { BlendState, PipelineStateInfo, RasterizerState, DepthStencilState, BlendTarget } from './base/pipeline-state'
 export * from './base/define';
