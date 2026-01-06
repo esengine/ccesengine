@@ -55,19 +55,19 @@ if (DEV) {
     cclegacy._Test = {};
 }
 
-const engineVersion = '4.0.0';
+const engineVersion = '1.0.0';
 
 /**
  * @en
- * The current version of Cocos engine.
+ * The current version of CCESEngine.
  * Please DO NOT remove this String, it is an important flag for bug tracking.
  * If you post a bug to forum, please attach this flag.
  * @zh
- * 当前使用的 Cocos 引擎版本。
+ * 当前使用的 CCESEngine 引擎版本。
  * 请不要删除此字符串，它是错误跟踪的重要标志。
  * 如果您将错误发布到论坛，请附上此标志。
  */
-_global.CocosEngine = legacyCC.ENGINE_VERSION = engineVersion;
+_global.CCESEngine = legacyCC.ENGINE_VERSION = engineVersion;
 
 _global.cc = legacyCC;
 

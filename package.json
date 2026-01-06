@@ -1,6 +1,6 @@
 {
   "name": "ccesengine",
-  "version": "4.0.0",
+  "version": "1.0.0",
   "description": "CCESEngine is a cross-platform 2D & 3D game engine forked from Cocos Creator, written in C++ and TypeScript, licensed under MIT.",
   "homepage": "https://github.com/esengine/ccesengine",
   "license": "MIT",
