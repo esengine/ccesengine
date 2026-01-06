@@ -1,88 +1,129 @@
 <p align="center">
-    <a href="https://www.cocos.com/">
+    <a href="https://github.com/esengine/ccesengine">
         <img src="./ui.png"
-             alt="Cocos Creator Logo">
+             alt="CCESEngine Logo">
     </a>
 </p>
 <p align="center">
-    <a href="https://github.com/cocos/cocos-engine/stargazers">
-        <img src="https://img.shields.io/github/stars/cocos/cocos-engine.svg?style=flat-square&colorB=4183c4"
+    <a href="https://github.com/esengine/ccesengine/stargazers">
+        <img src="https://img.shields.io/github/stars/esengine/ccesengine.svg?style=flat-square&colorB=4183c4"
              alt="stars">
     </a>
-    <a href="https://github.com/cocos-creator/engine/network">
-        <img src="https://img.shields.io/github/forks/cocos/cocos-engine.svg?style=flat-square&colorB=4183c4"
+    <a href="https://github.com/esengine/ccesengine/network">
+        <img src="https://img.shields.io/github/forks/esengine/ccesengine.svg?style=flat-square&colorB=4183c4"
              alt="forks">
     </a>
     <a href="./LICENSE">
         <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&colorB=4183c4"
              alt="license">
     </a>
-    <a href="https://twitter.com/CocosEngine">
-        <img src="https://img.shields.io/twitter/follow/CocosEngine.svg?logo=twitter&label=follow&style=flat-square&colorB=4183c4"
-             alt="twitter">
-    </a>
 </p>
 
-# COCOS 4
+# CCESEngine
 
-COCOS 4 是一个开源的、高性能的、跨平台的游戏和交互式内容开发引擎。基于成熟的 C++ 架构，它提供强大的渲染能力和灵活的脚本绑定，支持"一次编写，随处运行"的哲学。
+CCESEngine 是一个开源、高性能、跨平台的游戏引擎，基于 [Cocos Creator Engine](https://github.com/cocos/cocos-engine) 开发。采用成熟的 C++ 和 TypeScript 混合架构，提供强大的渲染能力和灵活的脚本绑定。
 
-以前，_Cocos Creator_ 指的是结合了引擎和编辑器的产品，跨越 1.x、2.x 和 3.x 版本。为了采纳纯开源模式并充分整合 AI，我们正在将引擎与编辑器分离。这是一个重大且必要的演进。往后：
+> **说明**：本项目基于 Cocos Creator 4.0，由 ESEngine 团队进行独立开发。
 
-**COCOS** 将专指引擎，主版本号升级到 **COCOS 4**。跨平台框架和编辑器的核心组件将被转换为 CLI 工具并整合到引擎的核心功能中。这代表着这个开源版本的一个重要新增功能。
+## 项目来源
 
-## 引擎特性
+CCESEngine 是从 [Cocos Creator Engine v4.0](https://github.com/cocos/cocos-engine) fork 而来，这是由 Cocos 团队开发的优秀开源游戏引擎。我们非常感谢 Cocos 团队对游戏开发社区的杰出贡献。
 
-1. **现代图形技术**：GFX 实现设计用于适配现代图形 API，在 Windows 和 Android 上使用 Vulkan，在 Mac OS 和 iOS 上使用 Metal，在 Web 平台上使用 WebGL。
-2. **高性能**：运行时引擎由 C++ 和 TypeScript 各占一半构成，低层基础设施、原生平台适配、渲染器和场景管理都用 C++ 编写以保证高运行时性能。我们不断将更多的繁重工作转移到原生代码中。
-3. **可定制化渲染管线**：渲染管线被设计为完全可定制的，已在所有平台上支持内置的正向和延迟渲染管线。开发者可以按照相同的方法自定义他们的渲染管线。
-4. **可扩展的表面着色器**：材质系统建立在 Cocos 的 effect 格式之上，使用 GLSL 300，着色器程序将自动转换为合适的运行时格式。表面着色器允许充分定制表面材质，同时确保通用的光照模型。
-5. **基于物理的渲染（PBR）**：标准效果采用基于物理的渲染，结合基于物理的摄像机和基于物理参数的光照，开发者可以轻松在不同环境中实现逼真、无缝的渲染效果。
-6. **易用的 TypeScript API**：用户级 API 集由 TypeScript 提供，加上强大的 VSCode 编辑器，使用 Cocos Creator 开发效率极高。
+### 主要区别
 
-![image](https://user-images.githubusercontent.com/1503156/111037166-f27c7600-845d-11eb-988f-4c2c8b5c7321.png)
+- **独立开发**：我们正在构建自己的编辑器和工具链
+- **专注优化**：精简 API，移除遗留兼容层
+- **社区驱动**：欢迎社区贡献和反馈
 
-引擎部分主要由 TypeScript 实现，支持用户使用 TypeScript 来编写游戏逻辑。另外在 `native` 目录中则提供了引擎在原生平台上的底层实现。引擎本身大部分是独立的，有成熟的运行时，包括光照、材质、粒子、动画、物理、UI、地形、声音、资源和场景节点管理等模块。同时支持原生和 Web 浏览器，包括 Windows、Mac、iOS、Android、HarmonyOS、Web。更令人兴奋的是，它支持各类小游戏平台，如微信小游戏和 Facebook Instant Games。
+## 特性
 
-## 开发
+1. **现代图形**：Windows/Android 使用 Vulkan，macOS/iOS 使用 Metal，Web 使用 WebGL/WebGPU
+2. **高性能**：C++ 和 TypeScript 混合架构，确保最佳运行时性能
+3. **可定制渲染管线**：支持前向渲染和延迟渲染，完全可定制
+4. **可扩展表面着色器**：基于 GLSL 300 的材质系统，自动转换
+5. **基于物理的渲染 (PBR)**：配合物理相机和光照的真实感渲染
+6. **简洁的 TypeScript API**：开发者友好的 API 设计，优秀的 IDE 支持
+
+## 快速开始
 
 ### 环境要求
 
-- 安装 [node.js v9.11.2 +](https://nodejs.org/)
-- 安装 [gulp-cli v2.3.0 +](https://github.com/gulpjs/gulp/tree/master/docs/getting-started)
+- [Node.js v18.0.0+](https://nodejs.org/)
+- [gulp-cli v2.3.0+](https://github.com/gulpjs/gulp/tree/master/docs/getting-started)
 
 ### 安装
 
-在本地克隆仓库中，运行以下命令设置开发环境：
-
 ```bash
-# 下载 & 构建引擎依赖
+# 克隆仓库
+git clone https://github.com/esengine/ccesengine.git
+
+# 安装依赖
+cd ccesengine
 npm install
+
+# 构建引擎
+npm run build
 ```
 
-这就完成了引擎开发环境搭建工作。
+### 开发
 
-### 编译
+```bash
+# 开发构建
+npm run build:dev
 
-- Cocos Creator 将在编辑器窗口打开后自动编译和构建引擎。更多在 Cocos Creator 中修改引擎的说明，请参考 [引擎定制工作流程](https://docs.cocos.com/creator/manual/zh/advanced-topics/engine-customization.html)。
-- 如果在编辑器之外单独使用，你需要运行以下命令来构建：
+# 运行测试
+npm test
 
-  ```bash
-  npm run build
-  ```
+# 清除缓存
+npm run clear
+```
 
-## 范例工程
+## 项目结构
 
-- [Example Cases](https://github.com/cocos/cocos-example-projects)：简单而富有表现力的演示场景，用于基线测试和特定主题的案例学习
-- [Mind Your Step 3D](https://github.com/cocos/cocos-tutorial-mind-your-step)：初学者的逐步教程项目
-- [UI Demo](https://github.com/cocos/cocos-example-ui)：各种 UI 组件的使用案例
-- [Test Cases](https://github.com/cocos/cocos-test-projects)：引擎各模块的测试场景
+```
+ccesengine/
+├── cocos/              # 引擎核心源码 (TypeScript)
+├── native/             # 原生实现 (C++)
+├── editor/             # 编辑器相关代码
+├── exports/            # 公开 API 导出
+├── pal/                # 平台抽象层
+├── tests/              # 测试文件
+└── docs/               # 文档
+```
+
+## 文档
+
+- [TypeScript 编码规范](./docs/TS_CODING_STYLE.md)
+- [C++ 编码规范](./docs/CPP_CODING_STYLE.md)
+- [原生开发指南](./native/README.md)
+
+## 贡献
+
+我们欢迎贡献！请在提交 Pull Request 前阅读贡献指南。
+
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
+3. 按照 [Conventional Commits](https://conventionalcommits.org/) 规范提交
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 提交 Pull Request
+
+### 编码规范
+
+- TypeScript 代码遵循 [TypeScript 编码规范](./docs/TS_CODING_STYLE.md)
+- C++ 代码遵循 [C++ 编码规范](./docs/CPP_CODING_STYLE.md)
+- 使用 ESLint 并集成 [CPP Linter](./docs/CPP_LINTER_AUTOFIX_GUIDE.md)
+
+## 致谢
+
+- [Cocos Creator Engine](https://github.com/cocos/cocos-engine) - 本项目 fork 的原始引擎
+- Cocos 团队在游戏引擎方面的卓越工作
+
+## 许可证
+
+本项目采用 MIT 许可证 - 详见 [LICENSE](./LICENSE) 文件。
 
 ## 链接
 
-- [官网](https://www.cocos.com/products#CocosCreator)
-- [下载](https://www.cocos.com/creator)
-- [文档](https://docs.cocos.com/creator/manual/zh/)
-- [API 参考](https://docs.cocos.com/creator/api/zh/)
-- [论坛](http://forum.cocos.org/c/Creator)
-- [Road Map](https://trello.com/b/JWVRRxMG/cocos-creator-roadmap)
+- [ESEngine GitHub](https://github.com/esengine)
+- [原始 Cocos Engine](https://github.com/cocos/cocos-engine)
+- [Cocos 官网](https://www.cocos.com/)

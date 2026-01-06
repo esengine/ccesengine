@@ -1,16 +1,16 @@
 <p align="center">
-    <a href="https://www.cocos.com/">
+    <a href="https://github.com/esengine/ccesengine">
         <img src="./ui.png"
-             alt="Cocos Creator Logo">
+             alt="CCESEngine Logo">
     </a>
 </p>
 <p align="center">
-    <a href="https://github.com/cocos/cocos-engine/stargazers">
-        <img src="https://img.shields.io/github/stars/cocos/cocos-engine.svg?style=flat-square&colorB=4183c4"
+    <a href="https://github.com/esengine/ccesengine/stargazers">
+        <img src="https://img.shields.io/github/stars/esengine/ccesengine.svg?style=flat-square&colorB=4183c4"
              alt="stars">
     </a>
-    <a href="https://github.com/cocos-creator/engine/network">
-        <img src="https://img.shields.io/github/forks/cocos/cocos-engine.svg?style=flat-square&colorB=4183c4"
+    <a href="https://github.com/esengine/ccesengine/network">
+        <img src="https://img.shields.io/github/forks/esengine/ccesengine.svg?style=flat-square&colorB=4183c4"
              alt="forks">
     </a>
     <a href="./LICENSE">
@@ -19,96 +19,111 @@
     </a>
 </p>
 
-# COCOS 4
+# CCESEngine
 
-COCOS 4 is an open-source, high-performance, cross-platform game and interactive content development engine. Built on a mature C++ architecture, it provides powerful rendering capabilities and flexible script bindings, supporting a "write once, run anywhere" philosophy.
+CCESEngine is an open-source, high-performance, cross-platform game engine forked from [Cocos Creator Engine](https://github.com/cocos/cocos-engine). Built on a mature C++ and TypeScript architecture, it provides powerful rendering capabilities and flexible script bindings.
 
-Previously, _Cocos Creator_ referred to the combined engine and editor, spanning versions 1.x, 2.x, and 3.x. To embrace a purely open-source model and fully integrate AI, we are separating the engine from the editor. This is a significant and necessary evolution. Moving forward:
+> **Note**: This project is based on Cocos Creator 4.0 and is being developed as an independent game engine by the ESEngine team.
 
-**COCOS** will refer solely to the engine, with the major version upgrading to **COCOS 4**. The cross-platform framework and the core components of the editor will be converted to CLI tools and integrated into the engine's core functionality. This represents a major new addition to this open-source release.
+## Origin
+
+CCESEngine is forked from [Cocos Creator Engine v4.0](https://github.com/cocos/cocos-engine), an excellent open-source game engine developed by the Cocos team. We are grateful to the Cocos team for their outstanding work and contributions to the game development community.
+
+### What's Different
+
+- **Independent Development**: We are building our own editor and toolchain
+- **Focused Optimization**: Streamlined APIs and removed legacy compatibility layers
+- **Community Driven**: Open to contributions and feedback from the community
 
 ## Features
 
-1. **Modern Graphics**: The GFX implementation is designed to adapt to the modern graphics APIs, it uses Vulkan on Windows and Android, Metal on Mac OS and iOS, and WebGL on Web platforms.
-2. **High Performance**: The runtime engine is built with half C++ and half TypeScript, low-level infrastructure, native platform adaptation, renderer, and scene management are all written in C++ to ensure high runtime performance. We continue to move heavy lifting work to native as much as possible.
-3. **Customizable Render Pipeline**: The render pipeline is designed to be fully customizable, it has supported the builtin forward and deferred render pipeline across all platforms. Developers can customize their render pipeline following the same approach.
-4. **Extensible Surface Shader**: The material system is built on Coco's effect format which uses GLSL 300, the shader programs will be converted to a suitable runtime format automatically. The surface shader permits to fully customize the surface material while ensuring a universal lighting model.
-5. **Physically Based Rendering (PBR)**: The standard effect adopts physically based rendering, along with the physically based camera and the lighting based on physical metrics, developers can easily achieve realistic and seamless rendering results across different environments.
-6. **Easy TypeScript API**: The user-level API set is provided in TypeScript, along with the powerful VSCode editor, development with Cocos Creator is incredibly efficient.
+1. **Modern Graphics**: Vulkan on Windows/Android, Metal on macOS/iOS, WebGL/WebGPU on Web
+2. **High Performance**: Hybrid C++ and TypeScript architecture for optimal runtime performance
+3. **Customizable Render Pipeline**: Support for forward and deferred rendering, fully customizable
+4. **Extensible Surface Shader**: GLSL 300 based material system with automatic conversion
+5. **Physically Based Rendering (PBR)**: Realistic rendering with physically based camera and lighting
+6. **Easy TypeScript API**: Developer-friendly API design with excellent IDE support
 
-Besides all these highlights, COCOS 4 also provides a built-in animation system, physics system, particle system, terrain editing support, complex UI system, instant preview, etc.
+## Getting Started
 
-![image](https://user-images.githubusercontent.com/1503156/111037166-f27c7600-845d-11eb-988f-4c2c8b5c7321.png)
+### Prerequisites
 
-## Development and Contribution Notice
+- [Node.js v18.0.0+](https://nodejs.org/)
+- [gulp-cli v2.3.0+](https://github.com/gulpjs/gulp/tree/master/docs/getting-started)
 
-Cocos Creator engine is open source and welcomes community participation, for open source engine development with Cocos Creator editor, you should fork this repository and setup [custom engine](https://docs.cocos.com/creator/manual/en/advanced-topics/engine-customization.html) in the editor.
-
-### Prerequisite
-
-- Install [node.js v9.11.2 +](https://nodejs.org/)
-- Install [gulp-cli v2.3.0 +](https://github.com/gulpjs/gulp/tree/master/docs/getting-started)
-
-### Clone
-
-Clone this repository into your local environment.
-
-### Install
-
-In the cloned engine folder, run the following command to set the development environment:
+### Installation
 
 ```bash
-# download & build engine dependencies
+# Clone the repository
+git clone https://github.com/esengine/ccesengine.git
+
+# Install dependencies
+cd ccesengine
 npm install
-```
 
-This is all you have to do to set up the engine development environment.
-
-### Build
-
-- If running inside Cocos Creator, the engine will automatically compile and build after the editor window is opened. For more instructions on modifying the engine in Cocos Creator, please refer to [Engine Customization Workflow](https://docs.cocos.com/creator/manual/en/advanced-topics/engine-customization.html).
-- Outside the editor, you need to run the following command to build:
-
-```bash
+# Build the engine
 npm run build
 ```
 
-Please refer to [native readme](native/README.md) if you want to develop native applications.
+### Development
 
-### Contribution
+```bash
+# Development build
+npm run build:dev
 
-You can contribute to the Cocos Creator open-source engine in many ways, they are very much appreciated:
+# Run tests
+npm test
 
-1. Report bugs or feature requests by [creating an issue](https://github.com/cocos/cocos-engine/issues/new/choose).
-2. Participate in discussions in the [issues](https://github.com/cocos/cocos-engine/issues/).
-3. Create a pull request if you have fixed or improved anything, or implemented any features.
-4. Improve the documentation with pull requests to the [usage documentation repository](https://github.com/cocos/cocos-docs).
-5. Help other developers in our [Forum](https://discuss.cocos2d-x.org/c/creator).
+# Clear cache
+npm run clear
+```
 
-### Contribution notice
+## Project Structure
 
-If you are trying to make a pull request, some requirements must be met so that your pull request can be accepted:
+```
+ccesengine/
+├── cocos/              # Engine core source code (TypeScript)
+├── native/             # Native implementation (C++)
+├── editor/             # Editor related code
+├── exports/            # Public API exports
+├── pal/                # Platform Abstraction Layer
+├── tests/              # Test files
+└── docs/               # Documentation
+```
 
-1. Follow our [Cpp Coding Style Guide](./docs/CPP_CODING_STYLE.md) and [TypeScript Coding Style Reference](./docs/TS_CODING_STYLE.md).
-2. Try to integrate ESLint and [CPP auto fix tools](./docs/CPP_LINTER_AUTOFIX_GUIDE.md) in your coding environment.
-3. Link related issues or discussions in your pull request and clearly state the purpose of your pull request.
-4. Pass all automatic continuous integration tests.
-5. Request file owners or engine developers to review your pull request.
-6. Get one valid approval from the engine architects.
+## Documentation
 
-## Example Project
+- [TypeScript Coding Style](./docs/TS_CODING_STYLE.md)
+- [C++ Coding Style](./docs/CPP_CODING_STYLE.md)
+- [Native Development](./native/README.md)
 
-- [Mind Your Step 3D](https://github.com/cocos/cocos-tutorial-mind-your-step): Beginner's step-by-step tutorial project repo.
-- [Test Cases](https://github.com/cocos/cocos-test-projects): Unit test scenes for every engine module.
-- [Example Cases](https://github.com/cocos/cocos-example-projects): Simple yet expressive demo scenes for baseline testing and topic-specific case study.
-- [Awesome Cocos](https://github.com/cocos/awesome-cocos): You can find out other useful tools and show cases here.
+## Contributing
+
+We welcome contributions! Please read our contributing guidelines before submitting pull requests.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes following [Conventional Commits](https://conventionalcommits.org/)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Coding Standards
+
+- Follow [TypeScript Coding Style](./docs/TS_CODING_STYLE.md) for TypeScript code
+- Follow [C++ Coding Style](./docs/CPP_CODING_STYLE.md) for C++ code
+- Use ESLint and integrate [CPP Linter](./docs/CPP_LINTER_AUTOFIX_GUIDE.md)
+
+## Acknowledgments
+
+- [Cocos Creator Engine](https://github.com/cocos/cocos-engine) - The original engine this project is forked from
+- The Cocos team for their excellent work on the game engine
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
 ## Links
 
-- [Official site](https://www.cocos.com/)
-- [Download](https://www.cocos.com/en/creator/download)
-- [Documentation](https://docs.cocos.com/creator/manual/en/)
-- [API References](https://docs.cocos.com/creator/api/en/)
-- [Projects and road map](https://github.com/orgs/cocos/projects?query=is%3Aopen&type=new)
-- [Forum](https://discuss.cocos2d-x.org/c/creator)
-- Discord community: Search for Cocos in the Discover panel of Discord.
+- [ESEngine GitHub](https://github.com/esengine)
+- [Original Cocos Engine](https://github.com/cocos/cocos-engine)
+- [Cocos Official Site](https://www.cocos.com/)

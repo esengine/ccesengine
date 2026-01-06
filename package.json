@@ -1,8 +1,8 @@
 {
-  "name": "cocos-creator",
+  "name": "ccesengine",
   "version": "4.0.0",
-  "description": "Cocos Creator is a cross-platform 2D & 3D game engine written in C++ and TypeScript, licensed under MIT.",
-  "homepage": "http://www.cocos.com",
+  "description": "CCESEngine is a cross-platform 2D & 3D game engine forked from Cocos Creator, written in C++ and TypeScript, licensed under MIT.",
+  "homepage": "https://github.com/esengine/ccesengine",
   "license": "MIT",
   "authors": [
     "AUTHORS.txt"
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cocos-creator/engine.git"
+    "url": "git+https://github.com/esengine/ccesengine.git"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
