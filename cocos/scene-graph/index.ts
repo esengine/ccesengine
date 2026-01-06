@@ -25,7 +25,6 @@ import './component-event-handler.schema';
 
 import './node-event-processor';
 import './deprecated';
-import './deprecated-3.7.0';
 // @deprecated since v3.7, please use Node instead.
 export { Node } from './node';
 export { Node as BaseNode } from './node'; //reserve BaseNode for compatibility. Note: should export it after export Node.

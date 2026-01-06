@@ -23,7 +23,6 @@
  THE SOFTWARE.
 */
 
-import './deprecated-3.6.0';
 import * as js from './js';
 
 /**
