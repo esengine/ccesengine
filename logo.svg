@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90D9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5BA0E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A90D9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Engine Icon - Gear with Play Button -->
+  <g transform="translate(20, 10)">
+    <!-- Outer Gear -->
+    <path d="M50,5 L55,15 L65,12 L65,22 L75,25 L70,35 L80,42 L72,50 L80,58 L70,65 L75,75 L65,78 L65,88 L55,85 L50,95 L45,85 L35,88 L35,78 L25,75 L30,65 L20,58 L28,50 L20,42 L30,35 L25,25 L35,22 L35,12 L45,15 Z" 
+          fill="url(#grad1)" stroke="#2E6DAB" stroke-width="2"/>
+    <!-- Inner Circle -->
+    <circle cx="50" cy="50" r="25" fill="#ffffff"/>
+    <!-- Play Triangle -->
+    <path d="M42,35 L42,65 L67,50 Z" fill="url(#grad2)"/>
+  </g>
+  
+  <!-- Text: CCES -->
+  <text x="115" y="70" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="bold" fill="#4A90D9">CCES</text>
+  
+  <!-- Text: Engine -->
+  <text x="235" y="70" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="300" fill="#666666">Engine</text>
+  
+  <!-- Tagline -->
+  <text x="115" y="100" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#999999">Cross-platform Game Engine</text>
+</svg>

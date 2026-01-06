@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/esengine/ccesengine">
-        <img src="./ui.png"
+        <img src="./logo.svg" width="400"
              alt="CCESEngine Logo">
     </a>
 </p>
