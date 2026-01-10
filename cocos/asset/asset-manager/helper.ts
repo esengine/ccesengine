@@ -25,10 +25,27 @@ import { cclegacy, error } from '../../core';
 import RequestItem from './request-item';
 import { bundles, transformPipeline } from './shared';
 import Task from './task';
+import decodeUuidImpl from '../../core/utils/decode-uuid';
 
 const _uuidRegex = /.*[/\\][0-9a-fA-F]{2}[/\\]([0-9a-fA-F-@]{8,}).*/;
 
-export { default as decodeUuid } from '../../core/utils/decode-uuid';
+/**
+ * @en
+ * Decode base64-compressed uuid.
+ *
+ * @zh
+ * 解码用 base64 压缩过的 uuid。
+ *
+ * @param base64 @en Base-64 compressed uuid. @zh 用 base-64 压缩过的 uuid。
+ * @returns @en Original uuid. @zh 未压缩过的 uuid。
+ *
+ * @example
+ * const uuid = 'fcmR3XADNLgJ1ByKhqcC5Z';
+ * const originalUuid = decodeUuid(uuid); // fc991dd7-0033-4b80-9d41-c8a86a702e59
+ */
+export function decodeUuid (base64: string): string {
+    return decodeUuidImpl(base64);
+}
 
 /**
  * @en

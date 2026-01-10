@@ -21,6 +21,7 @@
     "build:debug-infos": "node ./scripts/build-debug-infos",
     "build:declaration": "npm run build:const && node ./scripts/build-declarations",
     "build:min": "npm run build:debug-infos && node ./scripts/build-h5-minified",
+    "build:editor": "npm run build:debug-infos && node ./scripts/build-editor-esm",
     "build:native-pack-tool": "cd ./scripts/native-pack-tool && npm install && npm run build",
     "build:cli-min": "npm run build:debug-infos && node ./scripts/build-cli-minified",
     "clear": "node ./scripts/clear-cache.js",

@@ -2292,18 +2292,18 @@ export function WebGL2CmdFuncBindStates (
 
         const samplerLen = gpuShader.glSamplerTextures.length;
         for (let i = 0; i < samplerLen; i++) {
-            const glSampler = gpuShader.glSamplerTextures[i];
-            const gpuDescriptorSet = gpuDescriptorSets[glSampler.set];
-            let descriptorIndex = gpuDescriptorSet && gpuDescriptorSet.descriptorIndices[glSampler.binding];
+            const samplerInfo = gpuShader.glSamplerTextures[i];
+            const gpuDescriptorSet = gpuDescriptorSets[samplerInfo.set];
+            let descriptorIndex = gpuDescriptorSet && gpuDescriptorSet.descriptorIndices[samplerInfo.binding];
             let gpuDescriptor = descriptorIndex >= 0 && gpuDescriptorSet.gpuDescriptors[descriptorIndex];
 
-            for (let l = 0; l < glSampler.units.length; l++) {
-                const texUnit = glSampler.units[l];
+            for (let l = 0; l < samplerInfo.units.length; l++) {
+                const texUnit = samplerInfo.units[l];
 
                 const glTexUnit = cache.glTexUnits[texUnit];
 
                 if (!gpuDescriptor || !gpuDescriptor.gpuTextureView || !gpuDescriptor.gpuTextureView.gpuTexture || !gpuDescriptor.gpuSampler) {
-                    // error(`Sampler binding '${glSampler.name}' at set ${glSampler.set} binding ${glSampler.binding} index ${l} is not bounded`);
+                    // error(`Sampler binding '${samplerInfo.name}' at set ${samplerInfo.set} binding ${samplerInfo.binding} index ${l} is not bounded`);
                     continue;
                 }
 
