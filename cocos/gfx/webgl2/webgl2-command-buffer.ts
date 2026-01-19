@@ -81,6 +81,7 @@ export class WebGL2CommandBuffer extends CommandBuffer {
         this._numDrawCalls = 0;
         this._numInstances = 0;
         this._numTris = 0;
+        this._isInRenderPass = false;
     }
 
     public end (): void {

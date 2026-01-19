@@ -76,6 +76,8 @@ export class WebGLCommandBuffer extends CommandBuffer {
         this._numDrawCalls = 0;
         this._numInstances = 0;
         this._numTris = 0;
+        // Reset render pass state to ensure updateBuffer works correctly
+        this._isInRenderPass = false;
     }
 
     public override end (): void {
